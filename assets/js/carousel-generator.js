@@ -13,14 +13,14 @@ const productsData = [
     {
         image: "assets/img/2 Cotton Fabric 1040.webp",
         alt: "Cotton Fabric 1040 - S.K.Enterprise",
-        title: "Cotton Fabric 1040",
+        title: "Cotton Fabric For Dying & Print",
         description: "High-quality cotton fabric with excellent durability and comfort.",
         link: "products.html"
     },
     {
         image: "assets/img/3 Cotton Fabric (Print) 1030.webp",
         alt: "Cotton Fabric Print 1030 - S.K.Enterprise",
-        title: "Cotton Fabric Print 1030",
+        title: "Cotton Fabric For Print",
         description: "Beautifully printed cotton fabric with vibrant designs and patterns.",
         link: "products.html"
     },
@@ -48,7 +48,7 @@ const productsData = [
     {
         image: "assets/img/7 Woolen Fabric.webp",
         alt: "Woolen Fabric - S.K.Enterprise",
-        title: "Woolen Fabric",
+        title: "Woolen Fabric & Yarn",
         description: "Warm and comfortable woolen fabric for various applications.",
         link: "products.html"
     },
@@ -62,7 +62,7 @@ const productsData = [
     {
         image: "assets/img/14 Polyester Fabric.webp",
         alt: "Polyester Fabric - S.K.Enterprise",
-        title: "Polyester Fabric",
+        title: "Polyester Fabric & Hosiery",
         description: "High-quality polyester fabric with excellent durability and comfort.",
         link: "products.html"
     }
