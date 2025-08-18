@@ -25,7 +25,10 @@
     <!-- Sticky Modern Bootstrap Navbar -->
     <nav class="navbar navbar-expand-lg navbar-custom sticky-top" role="navigation" aria-label="Main navigation">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">S.K.Enterprise</a>
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+                <img src="assets/img/logo.png" alt="S.K.Enterprise Logo" height="40" class="me-2">
+                S.K.Enterprise
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
                 aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -81,17 +84,23 @@
                 <!-- Filter Buttons -->
                 <div class="filter-buttons">
                     <button class="filter-btn active" data-filter="all" type="button">All Products</button>
-                    <button class="filter-btn" data-filter="cotton" type="button">Cotton Fabrics</button>
-                    <button class="filter-btn" data-filter="hosiery" type="button">Hosiery</button>
-                    <button class="filter-btn" data-filter="silk" type="button">Silk Fabrics</button>
-                    <button class="filter-btn" data-filter="polyester" type="button">Polyester</button>
-                    <button class="filter-btn" data-filter="woolen" type="button">Woolen</button>
+                    <button class="filter-btn" data-filter="cotton-hank-fabric" type="button">Cotton Hank &
+                        Fabric</button>
+                    <button class="filter-btn" data-filter="cotton-hosiery" type="button">Cotton Hosiery</button>
+                    <button class="filter-btn" data-filter="nylon-wool-silk" type="button">Nylon Hosiery & Wool / Silk
+                        Fabric</button>
+                    <button class="filter-btn" data-filter="multifibre" type="button">Multifibre</button>
+                    <button class="filter-btn" data-filter="polyester" type="button">Polyester Fabric / Hosiery</button>
+                    <button class="filter-btn" data-filter="other-product" type="button">Other Product</button>
+                    <button class="filter-btn" data-filter="certificates" type="button">Certificates</button>
+                    <button class="filter-btn" data-filter="letters" type="button">Letters</button>
+                    <button class="filter-btn" data-filter="product-showcase" type="button">Product Showcase</button>
                 </div>
 
                 <!-- Gallery Grid -->
                 <div class="gallery-grid" id="galleryGrid">
                     <!-- Cotton Hank -->
-                    <div class="gallery-item" data-category="cotton">
+                    <div class="gallery-item" data-category="cotton-hank-fabric">
                         <div class="gallery-image-wrapper" data-image="assets/gallery/1 Cotton Hank.webp"
                             data-title="Cotton Hank - Premium Quality Cotton Yarn">
                             <img src="assets/gallery/1 Cotton Hank.webp" alt="Cotton Hank - S.K.Enterprise"
@@ -103,7 +112,7 @@
                     </div>
 
                     <!-- Cotton Fabric 1040 -->
-                    <div class="gallery-item" data-category="cotton">
+                    <div class="gallery-item" data-category="cotton-hank-fabric">
                         <div class="gallery-image-wrapper" data-image="assets/gallery/2 Cotton Fabric 1040.webp"
                             data-title="Cotton Fabric - High Quality Cotton Textile">
                             <img src="assets/gallery/2 Cotton Fabric 1040.webp" alt="Cotton Fabric - S.K.Enterprise"
@@ -115,7 +124,7 @@
                     </div>
 
                     <!-- Cotton Fabric Print 1030 -->
-                    <div class="gallery-item" data-category="cotton">
+                    <div class="gallery-item" data-category="cotton-hank-fabric">
                         <div class="gallery-image-wrapper" data-image="assets/gallery/3 Cotton Fabric (Print) 1030.webp"
                             data-title="Cotton Fabric for Print">
                             <img src="assets/gallery/3 Cotton Fabric (Print) 1030.webp"
@@ -127,7 +136,7 @@
                     </div>
 
                     <!-- Cotton Hosiery Single Jersey -->
-                    <div class="gallery-item" data-category="hosiery">
+                    <div class="gallery-item" data-category="cotton-hosiery">
                         <div class="gallery-image-wrapper"
                             data-image="assets/gallery/4 Cotton Hosiery Single Jersey.webp"
                             data-title="High Quality Knit Fabric">
@@ -140,7 +149,7 @@
                     </div>
 
                     <!-- Cotton Hosiery Double Jersey -->
-                    <div class="gallery-item" data-category="hosiery">
+                    <div class="gallery-item" data-category="cotton-hosiery">
                         <div class="gallery-image-wrapper"
                             data-image="assets/gallery/5 Cotton Hosiery Double Jersey.webp"
                             data-title="High Quality Knit Fabric">
@@ -153,7 +162,7 @@
                     </div>
 
                     <!-- Nylon Hosiery -->
-                    <div class="gallery-item" data-category="hosiery">
+                    <div class="gallery-item" data-category="nylon-wool-silk">
                         <div class="gallery-image-wrapper" data-image="assets/gallery/6 Nylon Hosiery.webp"
                             data-title="Standard Nylon Hosiery">
                             <img src="assets/gallery/6 Nylon Hosiery.webp" alt="Nylon Hosiery - S.K.Enterprise"
@@ -165,7 +174,7 @@
                     </div>
 
                     <!-- Woolen Fabric -->
-                    <div class="gallery-item" data-category="woolen">
+                    <div class="gallery-item" data-category="nylon-wool-silk">
                         <div class="gallery-image-wrapper" data-image="assets/gallery/7 Woolen Fabric.webp"
                             data-title="High Quality Pure Wool Fabric and Yarn">
                             <img src="assets/gallery/7 Woolen Fabric.webp" alt="Woolen Fabric - S.K.Enterprise"
@@ -177,7 +186,7 @@
                     </div>
 
                     <!-- Silk Fabric -->
-                    <div class="gallery-item" data-category="silk">
+                    <div class="gallery-item" data-category="nylon-wool-silk">
                         <div class="gallery-image-wrapper" data-image="assets/gallery/8 Silk Fabric .webp"
                             data-title="High Quality Pure Silk Fabric">
                             <img src="assets/gallery/8 Silk Fabric .webp" alt="Silk Fabric - S.K.Enterprise"
@@ -189,7 +198,7 @@
                     </div>
 
                     <!-- Multifibre -->
-                    <div class="gallery-item" data-category="cotton">
+                    <div class="gallery-item" data-category="multifibre">
                         <div class="gallery-image-wrapper" data-image="assets/gallery/9 Multifibre.webp"
                             data-title="Multifibre - Blended Textile Fabric">
                             <img src="assets/gallery/9 Multifibre.webp" alt="Multifibre - S.K.Enterprise"
@@ -201,7 +210,7 @@
                     </div>
 
                     <!-- Cotton Fabric 1249 Sulphur Dyes -->
-                    <div class="gallery-item" data-category="cotton">
+                    <div class="gallery-item" data-category="cotton-hank-fabric">
                         <div class="gallery-image-wrapper"
                             data-image="assets/gallery/10 Cotton Fabric 1249 (Sulphur dyes).webp"
                             data-title="Fabric Suits for Sulphur Dyes">
@@ -214,7 +223,7 @@
                     </div>
 
                     <!-- Cotton Fabric 1247 Pigments Print -->
-                    <div class="gallery-item" data-category="cotton">
+                    <div class="gallery-item" data-category="cotton-hank-fabric">
                         <div class="gallery-image-wrapper"
                             data-image="assets/gallery/11 Cotton Fabric 1247 (Pigments Print).webp"
                             data-title="Fabric Suits for Pigment">
@@ -227,7 +236,7 @@
                     </div>
 
                     <!-- Cotton Fabric 1240 Print -->
-                    <div class="gallery-item" data-category="cotton">
+                    <div class="gallery-item" data-category="cotton-hank-fabric">
                         <div class="gallery-image-wrapper"
                             data-image="assets/gallery/12 Cotton Fabric 1240 (Print).webp"
                             data-title="High Quality Twill Fabric">
@@ -240,7 +249,7 @@
                     </div>
 
                     <!-- Cotton Fabric 1242 Print -->
-                    <div class="gallery-item" data-category="cotton">
+                    <div class="gallery-item" data-category="cotton-hank-fabric">
                         <div class="gallery-image-wrapper"
                             data-image="assets/gallery/13 Cotton Fabric 1242 (Print).webp"
                             data-title="High Quality Tussar Fabric">
@@ -277,11 +286,86 @@
                     </div>
 
                     <!-- Other Product -->
-                    <div class="gallery-item" data-category="cotton">
+                    <div class="gallery-item" data-category="other-product">
                         <div class="gallery-image-wrapper" data-image="assets/gallery/Other Product.webp"
                             data-title="Other Product">
                             <img src="assets/gallery/Other Product.webp" alt="Other Product - S.K.Enterprise"
                                 loading="lazy">
+                            <div class="gallery-overlay">
+                                <i class="bi bi-zoom-in"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Other Images Section -->
+        <section class="py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold mb-2 text-navy">Other Images</h2>
+                    <p class="lead text-navy">Certificates, letters, and additional product showcases</p>
+                </div>
+
+                <!-- Other Images Grid -->
+                <div class="gallery-grid" id="otherImagesGrid">
+                    <!-- ISO Certificate -->
+                    <div class="gallery-item" data-category="certificates">
+                        <div class="gallery-image-wrapper"
+                            data-image="assets/gallery/ISO-Certificate-of-SKEnterprise.webp"
+                            data-title="ISO Certificate - S.K.Enterprise Quality Certification">
+                            <img src="assets/gallery/ISO-Certificate-of-SKEnterprise.webp"
+                                alt="ISO Certificate - S.K.Enterprise" loading="lazy">
+                            <div class="gallery-overlay">
+                                <i class="bi bi-zoom-in"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ZED Certificate -->
+                    <div class="gallery-item" data-category="certificates">
+                        <div class="gallery-image-wrapper"
+                            data-image="assets/gallery/zed-certificate-of-SKEnterprise.webp"
+                            data-title="ZED Certificate - S.K.Enterprise Zero Defect Zero Effect Certification">
+                            <img src="assets/gallery/zed-certificate-of-SKEnterprise.webp"
+                                alt="ZED Certificate - S.K.Enterprise" loading="lazy">
+                            <div class="gallery-overlay">
+                                <i class="bi bi-zoom-in"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DYTEK LAB Letter -->
+                    <div class="gallery-item" data-category="letters">
+                        <div class="gallery-image-wrapper" data-image="assets/gallery/latter of DYTEK LAB.webp"
+                            data-title="Letter from DYTEK LAB - Testimonial and Certification">
+                            <img src="assets/gallery/latter of DYTEK LAB.webp"
+                                alt="Letter from DYTEK LAB - S.K.Enterprise" loading="lazy">
+                            <div class="gallery-overlay">
+                                <i class="bi bi-zoom-in"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- R K TEX LAB Letter -->
+                    <div class="gallery-item" data-category="letters">
+                        <div class="gallery-image-wrapper" data-image="assets/gallery/latter of R K TEX LAB.webp"
+                            data-title="Letter from R K TEX LAB - Testimonial and Certification">
+                            <img src="assets/gallery/latter of R K TEX LAB.webp"
+                                alt="Letter from R K TEX LAB - S.K.Enterprise" loading="lazy">
+                            <div class="gallery-overlay">
+                                <i class="bi bi-zoom-in"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PAGE 15 Shades -->
+                    <div class="gallery-item" data-category="product-showcase">
+                        <div class="gallery-image-wrapper" data-image="assets/gallery/PAGE 15 shades.webp"
+                            data-title="15 Shades - Product Color Variations and Showcase">
+                            <img src="assets/gallery/PAGE 15 shades.webp"
+                                alt="15 Shades - S.K.Enterprise Product Showcase" loading="lazy">
                             <div class="gallery-overlay">
                                 <i class="bi bi-zoom-in"></i>
                             </div>
@@ -365,7 +449,10 @@
                 <!-- Company Info -->
                 <div class="col-md-3 text-md-start text-center mb-3 mb-md-0 d-flex flex-column justify-content-start">
                     <div class="fw-bold fs-2 mb-2 text-gold">S.K.Enterprise</div>
-                    <div class="text-beige">Premium Textile Solutions<br>Since 1985</div>
+                    <div class="text-beige">Leading manufacturer of Laboratory Testing Fabrics for Dyes, Chemicals,
+                        Pigments, Inks & Auxiliaries since 1985. ISO 9001:2015 certified company with 40+ years of
+                        excellence serving 60+ clients nationwide. We deliver precision, reliability, and
+                        uncompromising quality in every product.</div>
                 </div>
                 <!-- Quick Links -->
                 <div class="col-md-3 text-md-start mb-3 mb-md-0 d-flex flex-column justify-content-center">
@@ -375,7 +462,7 @@
                         <li><a href="about.html" class="footer-link">About Us</a></li>
                         <li><a href="products.html" class="footer-link">Products</a></li>
                         <li><a href="gallery.html" class="footer-link">Gallery</a></li>
-                        <li><a href="testimonials.html" class="footer-link">Testimonials</a></li>
+                        <li><a href="quality.html" class="footer-link">Quality</a></li>
                         <li><a href="blogs.html" class="footer-link">Blog</a></li>
                         <li><a href="contact.html" class="footer-link">Contact</a></li>
                     </ul>

@@ -23,7 +23,10 @@
     <!-- Sticky Modern Bootstrap Navbar -->
     <nav class="navbar navbar-expand-lg navbar-custom sticky-top" role="navigation" aria-label="Main navigation">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">S.K.Enterprise</a>
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+                <img src="assets/img/logo.png" alt="S.K.Enterprise Logo" height="40" class="me-2">
+                S.K.Enterprise
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
                 aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -46,14 +49,19 @@
     <main class="min-vh-100 pt-4 pb-5">
         <!-- Hero Section -->
         <section class="py-5 px-0">
-            <div class="hero-gradient w-100 rounded-0">
+            <div class="hero-gradient w-100 rounded-0 position-relative">
+                <!-- Made in India Badge -->
+                <div class="made-in-india-badge">
+                    <img src="assets/img/made-in-india.png" alt="Made in India" class="img-fluid"
+                        style="max-width: 120px; opacity: 0.9;">
+                </div>
                 <div class="container py-5">
                     <div class="row align-items-center">
                         <!-- Left: Text -->
                         <div class="col-lg-6 mb-4 mb-lg-0">
                             <span class="hero-badge">40+ Years of Excellence</span>
                             <h1 class="hero-headline">
-                                Your Complete Testing Solutions Partner Since 1985
+                                Your Complete Testing Solutions Partner Since 1985
                             </h1>
                             <div class="hero-subtitle">Delivering <span class="text-navy-fw600">Quality </span>,
                                 <span class="text-navy-fw600">Reliability</span>, and
@@ -92,9 +100,10 @@
                         <h2 class="fw-bold mb-3 text-navy">About Us</h2>
                         <p class="fs-1-15 text-navy">
                             It was the year 1985 when Mr. Kirankumar Shah, a man with a vision, started the company
-                            Madhuram Traders as a trading house of Cotton Yarn in Dyes Manufacturing Units. After
+                            <strong>Madhuram Traders</strong> as a trading house of Cotton Yarn in Dyes Manufacturing
+                            Units. After
                             getting overwhelming response due to the quality and timely delivery, a manufacturing unit
-                            was set up in the year 1987 for manufacturing of Cotton Hangs... <a href="about.html"
+                            was set up in the year 1987 for manufacturing of Cotton Hanks... <a href="about.html"
                                 class="text-coral fw-500">Read More</a>
                         </p>
 
@@ -114,7 +123,7 @@
                             <div class="col-12 col-md-4">
                                 <div class="about-highlight-box p-4 rounded h-100 mb-3 mb-md-0">
                                     <div class="fs-2-2 text-coral"><i class="bi bi-people"></i></div>
-                                    <div class="fw-bold text-navy fs-1-3">350+ Clients
+                                    <div class="fw-bold text-navy fs-1-3">60+ Clients
                                     </div>
                                     <div class="text-navy fs-0-98">Nationwide</div>
                                 </div>
@@ -123,7 +132,7 @@
                                 <div class="about-highlight-box p-4 rounded h-100">
                                     <div class="fs-2-2 text-gold"><i class="bi bi-globe"></i>
                                     </div>
-                                    <div class="fw-bold text-navy fs-1-3">250+
+                                    <div class="fw-bold text-navy fs-1-3">60+
                                     </div>
                                     <div class="text-navy fs-0-98">Number of Products
                                     </div>
@@ -139,9 +148,10 @@
             <div class="container">
                 <div class="text-center mb-5">
                     <h2 class="fw-bold mb-2 text-navy">Featured Products</h2>
-                    <p class="lead text-navy">Discover our range of Laboratory Testing Fabrics.</p>
-                    <p class="lead text-navy">We are dedicated to providing the Best Quality, Value and Service to meet
+                    <p class="lead text-navy">Discover our range of Laboratory Testing Fabrics. <br>
+                        We are dedicated to providing the Best Quality, Value and Service to meet
                         our customers' needs.</p>
+
                 </div>
                 <div id="productCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000"
                     role="region" aria-label="Product Carousel">
@@ -165,46 +175,209 @@
                 </div>
             </div>
         </section>
+        <!-- We are Supplying Testing Fabrics For Section -->
+        <section id="testing-fabrics" class="py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold mb-2 text-navy">We are Supplying Testing Fabrics For</h2>
+                    <p class="lead text-navy">Comprehensive range of testing fabrics for various dye applications and
+                        industries.</p>
+                </div>
+                <div class="row justify-content-center g-4">
+                    <!-- Reactive Dyes -->
+                    <div class="col-6 col-md-3 col-lg-2">
+                        <div class="product-circle">
+                            <div class="product-circle-inner">
+                                <div class="product-image">
+                                    <img src="assets/gallery/3 Cotton Fabric (Print) 1030.webp" alt="Reactive Dyes"
+                                        class="product-img">
+                                </div>
+                                <div class="product-label">Reactive Dyes</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Direct Dyes -->
+                    <div class="col-6 col-md-3 col-lg-2">
+                        <div class="product-circle">
+                            <div class="product-circle-inner">
+                                <div class="product-image">
+                                    <img src="assets/gallery/2 Cotton Fabric 1040.webp" alt="Direct Dyes"
+                                        class="product-img">
+                                </div>
+                                <div class="product-label">Direct Dyes</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Acid Dyes -->
+                    <div class="col-6 col-md-3 col-lg-2">
+                        <div class="product-circle">
+                            <div class="product-circle-inner">
+                                <div class="product-image">
+                                    <img src="assets/gallery/8 Silk Fabric .webp" alt="Acid Dyes" class="product-img">
+                                </div>
+                                <div class="product-label">Acid Dyes</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Basic Dyes -->
+                    <div class="col-6 col-md-3 col-lg-2">
+                        <div class="product-circle">
+                            <div class="product-circle-inner">
+                                <div class="product-image">
+                                    <img src="assets/gallery/4 Cotton Hosiery Single Jersey.webp" alt="Basic Dyes"
+                                        class="product-img">
+                                </div>
+                                <div class="product-label">Basic Dyes</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Vat Dyes -->
+                    <div class="col-6 col-md-3 col-lg-2">
+                        <div class="product-circle">
+                            <div class="product-circle-inner">
+                                <div class="product-image">
+                                    <img src="assets/gallery/5 Cotton Hosiery Double Jersey.webp" alt="Vat Dyes"
+                                        class="product-img">
+                                </div>
+                                <div class="product-label">Vat Dyes</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sulfur Dyes -->
+                    <div class="col-6 col-md-3 col-lg-2">
+                        <div class="product-circle">
+                            <div class="product-circle-inner">
+                                <div class="product-image">
+                                    <img src="assets/gallery/10 Cotton Fabric 1249 (Sulphur dyes).webp"
+                                        alt="Sulfur Dyes" class="product-img">
+                                </div>
+                                <div class="product-label">Sulfur Dyes</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Disperse Dyes -->
+                    <div class="col-6 col-md-3 col-lg-2">
+                        <div class="product-circle">
+                            <div class="product-circle-inner">
+                                <div class="product-image">
+                                    <img src="assets/gallery/14 Polyester Fabric.webp" alt="Disperse Dyes"
+                                        class="product-img">
+                                </div>
+                                <div class="product-label">Disperse Dyes</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Pigment Paste / Powder -->
+                    <div class="col-6 col-md-3 col-lg-2">
+                        <div class="product-circle">
+                            <div class="product-circle-inner">
+                                <div class="product-image">
+                                    <img src="assets/gallery/11 Cotton Fabric 1247 (Pigments Print).webp"
+                                        alt="Pigment Paste / Powder" class="product-img">
+                                </div>
+                                <div class="product-label">Pigment Paste / Powder</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Textile Ink -->
+                    <div class="col-6 col-md-3 col-lg-2">
+                        <div class="product-circle">
+                            <div class="product-circle-inner">
+                                <div class="product-image">
+                                    <img src="assets/gallery/12 Cotton Fabric 1240 (Print).webp" alt="Textile Ink"
+                                        class="product-img">
+                                </div>
+                                <div class="product-label">Textile Ink</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Solvent Dyes -->
+                    <div class="col-6 col-md-3 col-lg-2">
+                        <div class="product-circle">
+                            <div class="product-circle-inner">
+                                <div class="product-image">
+                                    <img src="assets/gallery/6 Nylon Hosiery.webp" alt="Solvent Dyes"
+                                        class="product-img">
+                                </div>
+                                <div class="product-label">Solvent Dyes</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Mordant Dyes -->
+                    <div class="col-6 col-md-3 col-lg-2">
+                        <div class="product-circle">
+                            <div class="product-circle-inner">
+                                <div class="product-image">
+                                    <img src="assets/gallery/7 Woolen Fabric.webp" alt="Mordant Dyes"
+                                        class="product-img">
+                                </div>
+                                <div class="product-label">Mordant Dyes</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Azoic Dyes -->
+                    <div class="col-6 col-md-3 col-lg-2">
+                        <div class="product-circle">
+                            <div class="product-circle-inner">
+                                <div class="product-image">
+                                    <img src="assets/gallery/13 Cotton Fabric 1242 (Print).webp" alt="Azoic Dyes"
+                                        class="product-img">
+                                </div>
+                                <div class="product-label">Azoic Dyes</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Textile Auxiliaries -->
+                    <div class="col-6 col-md-3 col-lg-2">
+                        <div class="product-circle">
+                            <div class="product-circle-inner">
+                                <div class="product-image">
+                                    <img src="assets/gallery/Other Product.webp" alt="Textile Auxiliaries"
+                                        class="product-img">
+                                </div>
+                                <div class="product-label">Textile Auxiliaries</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- Quality Section -->
-        <section id="quality" class="py-5">
+        <section id="quality" class="py-5 bg-beige">
             <div class="container">
                 <div class="text-center mb-5">
                     <h2 class="fw-bold mb-2 text-navy">Quality Excellence</h2>
-                    <p class="lead text-navy">Our commitment to delivering excellence through skilled professionals and
-                        stringent quality control processes.</p>
+
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
                         <!-- Professional Team Section -->
                         <div class="mb-5">
-                            <h3 class="fw-bold text-navy mb-4">
-                                <i class="bi bi-people-fill text-gold me-2"></i>Our Professional Team
-                            </h3>
+
                             <p class="text-navy mb-4">
-                                We have been able to meet the variegated demands of our clients owing to our skilled
-                                workforce. Following stringent selection policy, we have employed skilled professionals
-                                in our team who allow us to meet the bulk production requirements of our clients
-                                efficiently.
+                                Since inception, quality has been the foremost aspect of our business activities. Our
+                                quality controllers have in-depth domain knowledge and they ensure that the production
+                                and post production processes are carried out in compliance with the industry standards.
+                                They check the raw material used as well as the finished products on well defined
+                                parameters before these are delivered to the clients.
                             </p>
-                            <p class="text-navy mb-4">
-                                They are further provided with the requisite training so as to keep them abreast of the
-                                changing market trends.
-                            </p>
-                            <p class="text-navy mb-3">In our team, we have employed following professionals:</p>
+                            <h4 class="text-navy mb-3">Some of the factors based on which we check the range includes
+                                the following:</h4>
                             <div class="row">
                                 <div class="col-md-6">
                                     <ul class="list-unstyled">
                                         <li class="mb-2">
                                             <i class="bi bi-check-circle-fill text-coral me-2"></i>
-                                            <span class="text-navy">Procuring agents</span>
+                                            <span class="text-navy">Quality of fabrics that's fits in each of the
+                                                criteria</span>
                                         </li>
                                         <li class="mb-2">
                                             <i class="bi bi-check-circle-fill text-coral me-2"></i>
-                                            <span class="text-navy">R&D personnel</span>
+                                            <span class="text-navy">Consistency in quality of all material</span>
                                         </li>
                                         <li class="mb-2">
                                             <i class="bi bi-check-circle-fill text-coral me-2"></i>
-                                            <span class="text-navy">Quality controllers</span>
+                                            <span class="text-navy">Perfection in size And cutting</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -212,15 +385,56 @@
                                     <ul class="list-unstyled">
                                         <li class="mb-2">
                                             <i class="bi bi-check-circle-fill text-coral me-2"></i>
-                                            <span class="text-navy">Warehouse & packaging personnel</span>
+                                            <span class="text-navy">Perfection in weight</span>
                                         </li>
                                         <li class="mb-2">
                                             <i class="bi bi-check-circle-fill text-coral me-2"></i>
-                                            <span class="text-navy">Sales & marketing personnel</span>
+                                            <span class="text-navy">Long-term use And packing</span>
                                         </li>
                                         <li class="mb-2">
                                             <i class="bi bi-check-circle-fill text-coral me-2"></i>
-                                            <span class="text-navy">Skilled laborers</span>
+                                            <span class="text-navy">Resistance to weather</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <h4 class="text-navy mb-3">The following parameters are checked in quality control section:
+                            </h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2">
+                                            <i class="bi bi-check-circle-fill text-coral me-2"></i>
+                                            <span class="text-navy">Dimensional stability of fabric</span>
+                                        </li>
+                                        <li class="mb-2">
+                                            <i class="bi bi-check-circle-fill text-coral me-2"></i>
+                                            <span class="text-navy">Shrinkage of fabric</span>
+                                        </li>
+                                        <li class="mb-2">
+                                            <i class="bi bi-check-circle-fill text-coral me-2"></i>
+                                            <span class="text-navy">Color fastness for Washing, Rubbing, Perspiration,
+                                                Light</span>
+                                        </li>
+                                        <li class="mb-2">
+                                            <i class="bi bi-check-circle-fill text-coral me-2"></i>
+                                            <span class="text-navy">Pilling resistance of fabric</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2">
+                                            <i class="bi bi-check-circle-fill text-coral me-2"></i>
+                                            <span class="text-navy">Bursting strength of fabric</span>
+                                        </li>
+                                        <li class="mb-2">
+                                            <i class="bi bi-check-circle-fill text-coral me-2"></i>
+                                            <span class="text-navy">GSM testing of fabric</span>
+                                        </li>
+                                        <li class="mb-2">
+                                            <i class="bi bi-check-circle-fill text-coral me-2"></i>
+                                            <span class="text-navy">Sublimation testing</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -236,7 +450,7 @@
             </div>
         </section>
         <!-- Meet Our Team Section (replaces Gallery) -->
-        <section id="team" class="py-5 bg-beige">
+        <section id="team" class="py-5">
             <div class="container">
                 <div class="text-center mb-5">
                     <h2 class="fw-bold mb-2 text-navy">Meet Our Team</h2>
@@ -288,7 +502,7 @@
             </div>
         </section>
         <!-- Testimonials Section -->
-        <section id="testimonials" class="py-5">
+        <section id="testimonials" class="py-5 bg-beige">
             <div class="container">
                 <div class="text-center mb-5">
                     <h2 class="fw-bold mb-2 text-navy">Testimonials</h2>
@@ -317,7 +531,7 @@
             </div>
         </section>
         <!-- Blog Section -->
-        <section id="blog" class="py-5 bg-beige">
+        <section id="blog" class="py-5">
             <div class="container">
                 <div class="text-center mb-5">
                     <h2 class="fw-bold mb-2 text-navy">Latest Blog</h2>
@@ -414,7 +628,7 @@
             </div>
         </section>
         <!-- Contact Section -->
-        <section id="contact" class="py-5">
+        <section id="contact" class="py-5 bg-beige">
             <div class="container">
                 <div class="text-center mb-5">
                     <h2 class="fw-bold mb-2 text-navy">Contact Us</h2>
@@ -523,20 +737,22 @@
                 <!-- Company Info -->
                 <div class="col-md-3 text-md-start text-center mb-3 mb-md-0 d-flex flex-column justify-content-start">
                     <div class="fw-bold fs-2 mb-2 text-gold">S.K.Enterprise</div>
-                    <div class="text-beige">Premium Textile Solutions<br>Since 1985</div>
+                    <div class="text-beige">Leading manufacturer of Laboratory Testing Fabrics for Dyes, Chemicals,
+                        Pigments, Inks & Auxiliaries since 1985. ISO 9001:2015 certified company with 40+ years of
+                        excellence serving 60+ clients nationwide. We deliver precision, reliability, and
+                        uncompromising quality in every product.</div>
                 </div>
                 <!-- Quick Links -->
                 <div class="col-md-3 text-md-start mb-3 mb-md-0 d-flex flex-column justify-content-center">
                     <div class="fw-bold mb-2 text-gold">Quick Links</div>
                     <ul class="list-unstyled mb-0">
-                        <li><a href="#home" class="footer-link">Home</a></li>
-                        <li><a href="#about" class="footer-link">About Us</a></li>
-                        <li><a href="#products" class="footer-link">Products</a></li>
-                        <li><a href="#quality" class="footer-link">Quality</a></li>
-                        <li><a href="#team" class="footer-link">Team</a></li>
-                        <li><a href="#testimonials" class="footer-link">Testimonials</a></li>
-                        <li><a href="#blog" class="footer-link">Blog</a></li>
-                        <li><a href="#contact" class="footer-link">Contact</a></li>
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="about.html" class="footer-link">About Us</a></li>
+                        <li><a href="products.html" class="footer-link">Products</a></li>
+                        <li><a href="gallery.html" class="footer-link">Gallery</a></li>
+                        <li><a href="quality.html" class="footer-link">Quality</a></li>
+                        <li><a href="blogs.html" class="footer-link">Blog</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
                     </ul>
                 </div>
                 <!-- Address Column -->
