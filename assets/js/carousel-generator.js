@@ -73,43 +73,92 @@ const testimonialsData = [
     {
         image: "assets/img/testimonial.png",
         alt: "Client photo - John D.",
-        name: "John D.",
-        role: "Textile Retailer",
-        quote: "S.K.Enterprise delivers exceptional quality and service. Their fabrics have elevated our product line and impressed our customers.",
-        rating: 4.5
+        name: "MAHICKRA CHEMICALS LIMITED",
+        role: "Mr. Mitesh Gandh",
+        quote: "Our association with S.K. Enterprises / Madhuram Traders spans over 25 years, and it has been a truly reliable partnership. Their consistent support in fulfilling all our requirements has been commendable. We value their professionalism and look forward to continuing this strong relationship.",
+        rating: 5
     },
     {
         image: "assets/img/testimonial.png",
         alt: "Client photo - Priya S.",
-        name: "Priya S.",
-        role: "Fashion Designer",
-        quote: "Their innovative designs and timely delivery have made S.K.Enterprise our go-to textile partner for years.",
+        name: "ORNET INTERMEDIATES PRIVATE LIMITED",
+        role: "Mr. Ashok Mehta",
+        quote: "We have been associated with S.K Enterprise since 1992. The durability and performance of the textile products from S.K. Enterprise stand out. Their materials process well during dyeing and finishing, reducing wastage and saving us costs.",
         rating: 5
     },
     {
         image: "assets/img/testimonial.png",
         alt: "Client photo - Rajesh K.",
-        name: "Rajesh K.",
-        role: "Export Manager",
-        quote: "We value their professionalism and global reach. S.K.Enterprise is a trusted partner for our international business.",
-        rating: 4
+        name: "SUDEEP INDUSTRIES",
+        role: "Mr. Jaydeepsinh Devda",
+        quote: "We have been working with S.K. Enterprise for the past 12 years, they have consistently provided high-quality all types of laboratory dyes testing fabrics. The team at S.K. Enterprise is professional, reliable, and responsive to our requirements. They maintain timely deliveries & Good service",
+        rating: 5
     },
     {
         image: "assets/img/testimonial.png",
         alt: "Client photo - Emily R.",
-        name: "Emily R.",
-        role: "Boutique Owner",
-        quote: "The variety and quality of textiles from S.K.Enterprise are unmatched. Our boutique customers love the new collections!",
+        name: "CRAYON INDIA",
+        role: "Mr. Ketan Dudhat",
+        quote: "The fabric materials we source from S.K. Enterprise have always met international standards. Their commitment to maintaining quality gives us the confidence to serve our customers better.",
         rating: 5
     },
     {
         image: "assets/img/testimonial.png",
         alt: "Client photo - Ahmed F.",
-        name: "Ahmed F.",
-        role: "Garment Manufacturer",
-        quote: "Reliable supply, great communication, and top-notch fabrics. S.K.Enterprise is a key part of our success.",
-        rating: 4.5
+        name: "AVANI DYE CHEM INDUSTRIES",
+        role: "Mr. Shirin Parikh",
+        quote: "S.K. Enterprise often receives positive feedback for the quality of its products and services, The Company’s commitment to quality are frequently cited as a key strength.",
+        rating: 5
+    },
+    {
+        image: "assets/img/testimonial.png",
+        alt: "Client photo - Ahmed F.",
+        name: "RAJASTHAN DYES AND CHEMICALS, ALWAR.",
+        role: "Mr. Vipul Sacheti",
+        quote: "Whenever we had urgent requirements for testing fabrics, S.K. Enterprise stepped in promptly. Their reliability and consistent support have made them our trusted supplier of choice. Our partnership has greatly enhanced our supply chain efficiency, with timely delivery and accurate weights from hank to fabrics.",
+        rating: 5
+    },
+    {
+        image: "assets/img/testimonial.png",
+        alt: "Client photo - Ahmed F.",
+        name: "DYTEK LAB",
+        role: "Mr. Deep Vaghela",
+        quote: "We have been sourcing all our testing materials from S.K. Enterprises right from the beginning (Since 2001). What sets them apart is their customer-first approach. They not only deliver high-quality fabrics and solutions but also guide us with the best options for our applications.",
+        rating: 5
+    },
+    {
+        image: "assets/img/testimonial.png",
+        alt: "Client photo - Ahmed F.",
+        name: "R.K. TEX LAB",
+        role: "Mr. Ravi Dudhat",
+        quote: "We have been sourcing testing fabrics from S.K. Enterprise for several years, Our experience with S.K. Enterprise has been excellent in terms of both product and service. Their fabrics and all materials are of consistent quality, and their timely delivery ensures smooth functioning of our testing process. They have become our go-to supplier, not just for materials but also for dependable support.",
+        rating: 5
+    },
+    {
+        image: "assets/img/testimonial.png",
+        alt: "Client photo - Ahmed F.",
+        name: "ABS LABORATORIES, MUMBAI",
+        role: "Mr. Dhruv Shah",
+        quote: "We have been sourcing testing fabrics from S.K. Enterprise from many years and we are very satisfied with their consistent quality, reliability, wide range and quick response which Moxesh Shah provides.",
+        rating: 5
+    },
+    {
+        image: "assets/img/testimonial.png",
+        alt: "Client photo - Ahmed F.",
+        name: "S BOHRA LABORATORY, PALI.",
+        role: "Mr. Naresh Bohra",
+        quote: "We would like to extend our sincere gratitude for S.K. Enterprise continued support and exceptional service in providing high-quality fabric for our testing materials. Your commitment to excellence, timely deliveries, and consistent product standards has played a vital role in helping us maintain the integrity and precision of our testing processes. It’s rare to find a partner who combines reliability with such a strong focus on quality.",
+        rating: 5
+    },
+    {
+        image: "assets/img/testimonial.png",
+        alt: "Client photo - Ahmed F.",
+        name: "GAYATRI INTERNATIONAL, GHAZIABAD.",
+        role: "Mr. Atul Dhawan",
+        quote: "Our partnership with S.K. Enterprise has added real value to our business. Not only do they supply high-quality fabrics, but they also guide us with the best options for different applications. This kind of technical support and industry knowledge is rare, and it helps us make the right decisions for our production.",
+        rating: 5
     }
+
 ];
 
 // Generate star rating HTML
