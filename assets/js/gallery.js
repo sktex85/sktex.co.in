@@ -53,6 +53,26 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialize visible images
     updateVisibleImages();
 
+    // Handle URL parameters for direct image opening
+    function handleUrlParameters() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const imageParam = urlParams.get('image');
+
+        if (imageParam) {
+            // Find the image wrapper with matching data-image attribute
+            const targetWrapper = document.querySelector(`[data-image*="${imageParam}"]`);
+            if (targetWrapper) {
+                // Simulate click on the target image
+                setTimeout(() => {
+                    targetWrapper.click();
+                }, 500); // Small delay to ensure page is fully loaded
+            }
+        }
+    }
+
+    // Call URL parameter handler on page load
+    handleUrlParameters();
+
     // Lightbox functionality
     galleryImageWrappers.forEach((wrapper, index) => {
         wrapper.addEventListener('click', function (e) {

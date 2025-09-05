@@ -1131,3 +1131,59 @@ body {
 .lead-size-1-1rem {
     font-size: 1.1rem !important;
 }
+
+/* Client Logos Section Styles */
+.client-logo-card {
+    background: var(--color-white);
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(10, 38, 71, 0.08);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.client-logo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(10, 38, 71, 0.15);
+    border-color: var(--color-gold);
+}
+
+.client-logo {
+    max-width: 100%;
+    max-height: 80px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+.client-logo-card:hover .client-logo {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* Responsive adjustments for client logos */
+@media (max-width: 768px) {
+    .client-logo-card {
+        min-height: 100px;
+        padding: 1rem !important;
+    }
+
+    .client-logo {
+        max-height: 60px;
+    }
+}
+
+@media (max-width: 576px) {
+    .client-logo-card {
+        min-height: 80px;
+        padding: 0.75rem !important;
+    }
+
+    .client-logo {
+        max-height: 50px;
+    }
+}
