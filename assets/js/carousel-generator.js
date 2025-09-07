@@ -1,5 +1,5 @@
-// Carousel Generator for S.K.Enterprise
-// This script generates sliding window carousels from data arrays
+// Improved Carousel Generator for S.K.Enterprise
+// Responsive sliding window carousels with optimal mobile experience
 
 // Product Data - Add/Edit products here only
 const productsData = [
@@ -107,7 +107,7 @@ const testimonialsData = [
         alt: "Client photo - Ahmed F.",
         name: "AVANI DYE CHEM INDUSTRIES",
         role: "Mr. Shirin Parikh",
-        quote: "S.K. Enterprise often receives positive feedback for the quality of its products and services, The Company’s commitment to quality are frequently cited as a key strength.",
+        quote: "S.K. Enterprise often receives positive feedback for the quality of its products and services, The Company's commitment to quality are frequently cited as a key strength.",
         rating: 5
     },
     {
@@ -147,7 +147,7 @@ const testimonialsData = [
         alt: "Client photo - Ahmed F.",
         name: "S BOHRA LABORATORY, PALI.",
         role: "Mr. Naresh Bohra",
-        quote: "We would like to extend our sincere gratitude for S.K. Enterprise continued support and exceptional service in providing high-quality fabric for our testing materials. Your commitment to excellence, timely deliveries, and consistent product standards has played a vital role in helping us maintain the integrity and precision of our testing processes. It’s rare to find a partner who combines reliability with such a strong focus on quality.",
+        quote: "We would like to extend our sincere gratitude for S.K. Enterprise continued support and exceptional service in providing high-quality fabric for our testing materials. Your commitment to excellence, timely deliveries, and consistent product standards has played a vital role in helping us maintain the integrity and precision of our testing processes. It's rare to find a partner who combines reliability with such a strong focus on quality.",
         rating: 5
     },
     {
@@ -158,8 +158,21 @@ const testimonialsData = [
         quote: "Our partnership with S.K. Enterprise has added real value to our business. Not only do they supply high-quality fabrics, but they also guide us with the best options for different applications. This kind of technical support and industry knowledge is rare, and it helps us make the right decisions for our production.",
         rating: 5
     }
-
 ];
+
+// Configuration for responsive breakpoints
+const breakpoints = {
+    mobile: 576,
+    tablet: 768,
+    desktop: 992
+};
+
+// Get items per slide based on screen size
+function getItemsPerSlide(screenWidth) {
+    if (screenWidth < breakpoints.mobile) return 1;
+    if (screenWidth < breakpoints.desktop) return 2;
+    return 3;
+}
 
 // Generate star rating HTML
 function generateStars(rating) {
@@ -183,15 +196,17 @@ function generateStars(rating) {
     return starsHTML;
 }
 
-// Generate product card HTML
+// Generate product card HTML with improved mobile styling
 function generateProductCard(product) {
     return `
-        <div class="col-md-4 mb-4 mb-md-0">
-            <div class="card h-100 shadow-sm border-0">
-                <img src="${product.image}" class="card-img-top" alt="${product.alt}" loading="lazy">
+        <div class="carousel-slide-item">
+            <div class="card h-100 shadow-sm border-0 carousel-card">
+                <div class="card-img-container">
+                    <img src="${product.image}" class="card-img-top carousel-card-img" alt="${product.alt}" loading="lazy">
+                </div>
                 <div class="card-body d-flex flex-column">
-                    <h5 class="card-title fw-bold text-navy">${product.title}</h5>
-                    <p class="card-text text-navy">${product.description}</p>
+                    <h5 class="card-title fw-bold text-navy mb-2">${product.title}</h5>
+                    <p class="card-text text-navy mb-3 flex-grow-1">${product.description}</p>
                     <a href="${product.link}" class="btn btn-gold mt-auto">View Details</a>
                 </div>
             </div>
@@ -199,17 +214,19 @@ function generateProductCard(product) {
     `;
 }
 
-// Generate testimonial card HTML
+// Generate testimonial card HTML with improved mobile styling
 function generateTestimonialCard(testimonial) {
     return `
-        <div class="col-md-4 mb-4 mb-md-0">
-            <div class="card border-0 shadow-sm p-4 text-center h-100">
-                <img src="${testimonial.image}" alt="${testimonial.alt}"
-                    class="rounded-circle mx-auto mb-3 width-80 height-80 object-cover border-gold bg-beige" loading="lazy">
-                <h5 class="fw-bold mb-0 text-navy">${testimonial.name}</h5>
-                <div class="mb-2 text-coral fs-1">${testimonial.role}</div>
-                <p class="mb-3 text-navy">"${testimonial.quote}"</p>
-                <div class="text-gold">
+        <div class="carousel-slide-item">
+            <div class="card border-0 shadow-sm p-3 p-md-4 text-center h-100 carousel-card">
+                <div class="testimonial-img-container mb-3">
+                    <img src="${testimonial.image}" alt="${testimonial.alt}"
+                        class="rounded-circle mx-auto testimonial-img" loading="lazy">
+                </div>
+                <h5 class="fw-bold mb-1 text-navy testimonial-name">${testimonial.name}</h5>
+                <div class="mb-2 text-coral fs-6 testimonial-role">${testimonial.role}</div>
+                <p class="mb-3 text-navy testimonial-quote">"${testimonial.quote}"</p>
+                <div class="text-gold mt-auto">
                     ${generateStars(testimonial.rating)}
                 </div>
             </div>
@@ -217,14 +234,262 @@ function generateTestimonialCard(testimonial) {
     `;
 }
 
-// Create sliding window carousel with single item transitions
-function createSlidingCarousel(data, containerId, indicatorsId, itemsPerSlide = 3) {
+// Add comprehensive responsive CSS
+function addResponsiveStyles(containerId, totalItems) {
+    const carouselId = containerId.replace('Inner', '');
+    const styleId = `style-${carouselId}`;
+
+    // Remove existing style if it exists
+    const existingStyle = document.getElementById(styleId);
+    if (existingStyle) {
+        existingStyle.remove();
+    }
+
+    const style = document.createElement('style');
+    style.id = styleId;
+    style.textContent = `
+        /* Base carousel styles */
+        #${carouselId} {
+            overflow: hidden !important;
+            position: relative;
+        }
+        
+        #${carouselId} .carousel-inner {
+            overflow: hidden !important;
+            padding: 10px 0;
+        }
+        
+        #${carouselId}Row {
+            display: flex;
+            flex-wrap: nowrap;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            align-items: stretch;
+        }
+        
+        /* Slide item base styles */
+        .carousel-slide-item {
+            flex-shrink: 0;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+        
+        /* Card styling improvements */
+        .carousel-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .carousel-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+        }
+        
+        /* Product card specific styles */
+        .card-img-container {
+            overflow: hidden;
+            height: 200px;
+            position: relative;
+        }
+        
+        .carousel-card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .carousel-card:hover .carousel-card-img {
+            transform: scale(1.05);
+        }
+        
+        /* Testimonial specific styles */
+        .testimonial-img-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80px;
+        }
+        
+        .testimonial-img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border: 3px solid #f8f9fa;
+        }
+        
+        .testimonial-name {
+            font-size: 0.95rem;
+            line-height: 1.3;
+            word-break: break-word;
+        }
+        
+        .testimonial-role {
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .testimonial-quote {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            text-align: left !important;
+            word-break: break-word;
+            hyphens: auto;
+        }
+        
+        /* Desktop: 3 items per slide */
+        @media (min-width: ${breakpoints.desktop}px) {
+            .carousel-slide-item {
+                width: 33.333333%;
+                flex: 0 0 33.333333%;
+            }
+            
+            .card-img-container {
+                height: 220px;
+            }
+            
+            .testimonial-img {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .testimonial-name {
+                font-size: 1rem;
+            }
+            
+            .testimonial-role {
+                font-size: 0.9rem;
+            }
+            
+            .testimonial-quote {
+                font-size: 0.95rem;
+            }
+        }
+        
+        /* Tablet: 2 items per slide */
+        @media (min-width: ${breakpoints.mobile}px) and (max-width: ${breakpoints.desktop - 1}px) {
+            .carousel-slide-item {
+                width: 50%;
+                flex: 0 0 50%;
+            }
+            
+            .card-img-container {
+                height: 200px;
+            }
+        }
+        
+        /* Mobile: 1 item per slide */
+        @media (max-width: ${breakpoints.mobile - 1}px) {
+            .carousel-slide-item {
+                width: 100%;
+                flex: 0 0 100%;
+                padding: 0 5px;
+            }
+            
+            #${carouselId} .carousel-inner {
+                padding: 5px 0;
+            }
+            
+            .carousel-card {
+                margin: 0 auto;
+                max-width: 350px;
+            }
+            
+            .card-img-container {
+                height: 180px;
+            }
+            
+            .card-body {
+                padding: 1rem !important;
+            }
+            
+            .testimonial-img {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .testimonial-name {
+                font-size: 0.9rem;
+            }
+            
+            .testimonial-role {
+                font-size: 0.8rem;
+            }
+            
+            .testimonial-quote {
+                font-size: 0.85rem;
+                text-align: center !important;
+            }
+            
+            /* Mobile navigation improvements */
+            #${carouselId} .carousel-control-prev,
+            #${carouselId} .carousel-control-next {
+                width: 40px;
+                height: 40px;
+                background: rgba(0,0,0,0.6);
+                border-radius: 50%;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            
+            #${carouselId} .carousel-control-prev {
+                left: 10px;
+            }
+            
+            #${carouselId} .carousel-control-next {
+                right: 10px;
+            }
+            
+            #${carouselId} .carousel-control-prev-icon,
+            #${carouselId} .carousel-control-next-icon {
+                width: 20px;
+                height: 20px;
+            }
+        }
+        
+        /* Indicators styling */
+        #${carouselId} .carousel-indicators {
+            margin-bottom: -10px;
+        }
+        
+        #${carouselId} .carousel-indicators button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin: 0 3px;
+            border: none;
+            background-color: rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        #${carouselId} .carousel-indicators button.active {
+            background-color: #d4af37;
+            transform: scale(1.2);
+        }
+        
+        /* Touch/swipe enhancements */
+        @media (max-width: ${breakpoints.tablet}px) {
+            #${carouselId} {
+                touch-action: pan-y pinch-zoom;
+            }
+            
+            .carousel-slide-item {
+                user-select: none;
+            }
+        }
+    `;
+
+    document.head.appendChild(style);
+}
+
+// Enhanced carousel creation with responsive features
+function createSlidingCarousel(data, containerId, indicatorsId) {
     const container = document.getElementById(containerId);
     const indicatorsContainer = document.getElementById(indicatorsId);
 
-    if (!container || !indicatorsContainer) return;
+    if (!container || !indicatorsContainer || !data.length) return;
 
-    // Create a single carousel item with all items
+    // Generate all items HTML
     let allItemsHTML = '';
     data.forEach((item, index) => {
         if (containerId === 'productCarouselInner') {
@@ -234,35 +499,47 @@ function createSlidingCarousel(data, containerId, indicatorsId, itemsPerSlide = 
         }
     });
 
-    // Create single carousel item with all items
+    // Create carousel structure
     container.innerHTML = `
         <div class="carousel-item active">
-            <div class="row justify-content-center" id="${containerId.replace('Inner', '')}Row">
+            <div class="carousel-row" id="${containerId.replace('Inner', '')}Row">
                 ${allItemsHTML}
             </div>
         </div>
     `;
 
-    // Generate indicators
-    const totalSlides = data.length;
+    // Add responsive styles
+    addResponsiveStyles(containerId, data.length);
+
+    // Generate indicators based on responsive logic
+    generateResponsiveIndicators(containerId, indicatorsId, data.length);
+
+    // Add enhanced sliding functionality
+    addResponsiveSlidingFunctionality(containerId, data);
+}
+
+// Generate indicators based on current screen size
+function generateResponsiveIndicators(containerId, indicatorsId, totalItems) {
+    const indicatorsContainer = document.getElementById(indicatorsId);
+    const currentItemsPerSlide = getItemsPerSlide(window.innerWidth);
+    const totalSlides = Math.max(1, totalItems - currentItemsPerSlide + 1);
+
     let indicatorsHTML = '';
     for (let i = 0; i < totalSlides; i++) {
         const isActive = i === 0 ? 'active' : '';
         indicatorsHTML += `
             <button type="button" data-bs-target="#${containerId.replace('Inner', '')}" 
                 data-bs-slide-to="${i}" class="${isActive}" 
-                aria-current="${isActive ? 'true' : 'false'}" aria-label="Slide ${i + 1}">
+                aria-current="${isActive ? 'true' : 'false'}" 
+                aria-label="Slide ${i + 1}">
             </button>
         `;
     }
     indicatorsContainer.innerHTML = indicatorsHTML;
-
-    // Add custom sliding functionality
-    addSlidingFunctionality(containerId, data.length, itemsPerSlide);
 }
 
-// Add sliding functionality to carousel
-function addSlidingFunctionality(containerId, totalItems, itemsPerSlide) {
+// Enhanced sliding functionality with touch support and responsive behavior
+function addResponsiveSlidingFunctionality(containerId, data) {
     const carouselId = containerId.replace('Inner', '');
     const carousel = document.getElementById(carouselId);
     const row = document.getElementById(containerId.replace('Inner', '') + 'Row');
@@ -272,127 +549,173 @@ function addSlidingFunctionality(containerId, totalItems, itemsPerSlide) {
     let currentIndex = 0;
     let autoPlayInterval;
     let isTransitioning = false;
+    let currentItemsPerSlide = getItemsPerSlide(window.innerWidth);
 
-    // Add CSS for smooth transitions and proper overflow handling
-    const style = document.createElement('style');
-    style.textContent = `
-        #${carouselId} {
-            overflow: hidden !important;
-            position: relative;
-        }
-        #${carouselId} .carousel-inner {
-            overflow: hidden !important;
-        }
-        #${carouselId}Row {
-            transition: transform 0.6s ease-in-out;
-            display: flex;
-            flex-wrap: nowrap;
-            width: calc(100% * ${totalItems / itemsPerSlide});
-        }
-        #${carouselId}Row > div {
-            flex: 0 0 calc(100% / ${totalItems});
-            max-width: calc(100% / ${totalItems});
-            min-width: calc(100% / ${totalItems});
-        }
-        @media (max-width: 767.98px) {
-            #${carouselId}Row > div {
-                flex: 0 0 100%;
-                max-width: 100%;
-                min-width: 100%;
-            }
-        }
-    `;
-    document.head.appendChild(style);
+    // Touch/swipe variables
+    let startX = 0;
+    let currentX = 0;
+    let isDragging = false;
+    let startTime = 0;
 
-    // Function to slide to specific index with infinite loop
-    function slideToIndex(index) {
-        if (isTransitioning) return;
-
-        isTransitioning = true;
-        currentIndex = index;
-        const translateX = -(index * (100 / totalItems));
-        row.style.transform = `translateX(${translateX}%)`;
-
-        // Update indicators
-        const indicators = document.querySelectorAll(`#${carouselId}Indicators button`);
-        indicators.forEach((indicator, i) => {
-            indicator.classList.toggle('active', i === index);
-        });
-
-        // Reset transition flag after animation completes
-        setTimeout(() => {
-            isTransitioning = false;
-        }, 600);
+    // Calculate total slides based on current screen size
+    function getTotalSlides() {
+        return Math.max(1, data.length - currentItemsPerSlide + 1);
     }
 
-    // Function to go to next slide with infinite loop
+    // Update layout on resize
+    function handleResize() {
+        const newItemsPerSlide = getItemsPerSlide(window.innerWidth);
+        if (newItemsPerSlide !== currentItemsPerSlide) {
+            currentItemsPerSlide = newItemsPerSlide;
+            currentIndex = Math.min(currentIndex, getTotalSlides() - 1);
+            generateResponsiveIndicators(containerId, `${carouselId}Indicators`, data.length);
+            slideToIndex(currentIndex, false);
+        }
+    }
+
+    // Slide to specific index
+    function slideToIndex(index, animate = true) {
+        if (isTransitioning && animate) return;
+
+        const totalSlides = getTotalSlides();
+        currentIndex = Math.max(0, Math.min(index, totalSlides - 1));
+
+        if (animate) {
+            isTransitioning = true;
+            setTimeout(() => { isTransitioning = false; }, 600);
+        }
+
+        // Calculate translate percentage based on responsive layout
+        let translateX;
+        if (currentItemsPerSlide === 1) {
+            translateX = -(currentIndex * 100);
+        } else if (currentItemsPerSlide === 2) {
+            translateX = -(currentIndex * 50);
+        } else {
+            translateX = -(currentIndex * (100 / 3));
+        }
+
+        row.style.transform = `translateX(${translateX}%)`;
+        updateIndicators();
+    }
+
+    // Update active indicator
+    function updateIndicators() {
+        const indicators = document.querySelectorAll(`#${carouselId}Indicators button`);
+        indicators.forEach((indicator, i) => {
+            indicator.classList.toggle('active', i === currentIndex);
+        });
+    }
+
+    // Navigation functions
     function nextSlide() {
         if (isTransitioning) return;
-
-        const nextIndex = (currentIndex + 1) % totalItems;
+        const totalSlides = getTotalSlides();
+        const nextIndex = currentIndex >= totalSlides - 1 ? 0 : currentIndex + 1;
         slideToIndex(nextIndex);
     }
 
-    // Function to go to previous slide with infinite loop
     function prevSlide() {
         if (isTransitioning) return;
-
-        const prevIndex = (currentIndex - 1 + totalItems) % totalItems;
+        const totalSlides = getTotalSlides();
+        const prevIndex = currentIndex <= 0 ? totalSlides - 1 : currentIndex - 1;
         slideToIndex(prevIndex);
     }
 
-    // Remove Bootstrap carousel event listeners to prevent double movement
-    carousel.removeEventListener('slide.bs.carousel', function () { });
+    // Touch/swipe event handlers
+    function handleTouchStart(e) {
+        startX = e.touches ? e.touches[0].clientX : e.clientX;
+        currentX = startX;
+        isDragging = true;
+        startTime = Date.now();
+        stopAutoPlay();
+    }
 
-    // Add custom navigation
-    const prevButton = carousel.querySelector('.carousel-control-prev');
-    const nextButton = carousel.querySelector('.carousel-control-next');
+    function handleTouchMove(e) {
+        if (!isDragging) return;
+        e.preventDefault();
+        currentX = e.touches ? e.touches[0].clientX : e.clientX;
+    }
 
-    if (prevButton) {
-        // Remove existing event listeners
-        prevButton.replaceWith(prevButton.cloneNode(true));
-        const newPrevButton = carousel.querySelector('.carousel-control-prev');
+    function handleTouchEnd(e) {
+        if (!isDragging) return;
+        isDragging = false;
 
-        newPrevButton.addEventListener('click', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-            prevSlide();
-            resetAutoPlay();
+        const deltaX = currentX - startX;
+        const deltaTime = Date.now() - startTime;
+        const velocity = Math.abs(deltaX) / deltaTime;
+
+        // Determine if swipe was significant enough
+        if (Math.abs(deltaX) > 50 || velocity > 0.5) {
+            if (deltaX > 0) {
+                prevSlide();
+            } else {
+                nextSlide();
+            }
+        }
+
+        resetAutoPlay();
+    }
+
+    // Setup navigation controls
+    function setupControls() {
+        // Previous button
+        const prevButton = carousel.querySelector('.carousel-control-prev');
+        if (prevButton) {
+            prevButton.replaceWith(prevButton.cloneNode(true));
+            const newPrevButton = carousel.querySelector('.carousel-control-prev');
+            newPrevButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                prevSlide();
+                resetAutoPlay();
+            });
+        }
+
+        // Next button
+        const nextButton = carousel.querySelector('.carousel-control-next');
+        if (nextButton) {
+            nextButton.replaceWith(nextButton.cloneNode(true));
+            const newNextButton = carousel.querySelector('.carousel-control-next');
+            newNextButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                nextSlide();
+                resetAutoPlay();
+            });
+        }
+
+        // Indicator buttons
+        const indicators = document.querySelectorAll(`#${carouselId}Indicators button`);
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', (e) => {
+                e.preventDefault();
+                slideToIndex(index);
+                resetAutoPlay();
+            });
         });
     }
 
-    if (nextButton) {
-        // Remove existing event listeners
-        nextButton.replaceWith(nextButton.cloneNode(true));
-        const newNextButton = carousel.querySelector('.carousel-control-next');
+    // Touch event setup
+    function setupTouchEvents() {
+        // Mouse events for desktop
+        row.addEventListener('mousedown', handleTouchStart);
+        row.addEventListener('mousemove', handleTouchMove);
+        row.addEventListener('mouseup', handleTouchEnd);
+        row.addEventListener('mouseleave', handleTouchEnd);
 
-        newNextButton.addEventListener('click', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-            nextSlide();
-            resetAutoPlay();
-        });
+        // Touch events for mobile
+        row.addEventListener('touchstart', handleTouchStart, { passive: false });
+        row.addEventListener('touchmove', handleTouchMove, { passive: false });
+        row.addEventListener('touchend', handleTouchEnd);
     }
-
-    // Add indicator click handlers
-    const indicators = document.querySelectorAll(`#${carouselId}Indicators button`);
-    indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-            slideToIndex(index);
-            resetAutoPlay();
-        });
-    });
 
     // Auto-play functionality
     function startAutoPlay() {
-        stopAutoPlay(); // Clear any existing interval
+        stopAutoPlay();
         autoPlayInterval = setInterval(() => {
-            if (!isTransitioning) {
+            if (!isTransitioning && !isDragging) {
                 nextSlide();
             }
-        }, 4000);
+        }, 5000);
     }
 
     function stopAutoPlay() {
@@ -404,23 +727,47 @@ function addSlidingFunctionality(containerId, totalItems, itemsPerSlide) {
 
     function resetAutoPlay() {
         stopAutoPlay();
-        startAutoPlay();
+        setTimeout(startAutoPlay, 2000); // Restart after 2 seconds
     }
 
-    // Pause auto-play on hover
+    // Event listeners
+    window.addEventListener('resize', handleResize);
     carousel.addEventListener('mouseenter', stopAutoPlay);
     carousel.addEventListener('mouseleave', startAutoPlay);
 
-    // Initialize position and start auto-play
-    slideToIndex(0);
+    // Initialize
+    setupControls();
+    setupTouchEvents();
+    slideToIndex(0, false);
     startAutoPlay();
+
+    // Cleanup function
+    return () => {
+        window.removeEventListener('resize', handleResize);
+        stopAutoPlay();
+    };
 }
 
 // Initialize carousels when DOM is loaded
 document.addEventListener('DOMContentLoaded', function () {
-    // Create product carousel
-    createSlidingCarousel(productsData, 'productCarouselInner', 'productCarouselIndicators', 3);
+    // Create responsive carousels
+    createSlidingCarousel(productsData, 'productCarouselInner', 'productCarouselIndicators');
+    createSlidingCarousel(testimonialsData, 'testimonialCarouselInner', 'testimonialCarouselIndicators');
 
-    // Create testimonial carousel
-    createSlidingCarousel(testimonialsData, 'testimonialCarouselInner', 'testimonialCarouselIndicators', 3);
+    // Add keyboard navigation support
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft') {
+            const activeCarousel = document.querySelector('.carousel:hover');
+            if (activeCarousel) {
+                const prevBtn = activeCarousel.querySelector('.carousel-control-prev');
+                if (prevBtn) prevBtn.click();
+            }
+        } else if (e.key === 'ArrowRight') {
+            const activeCarousel = document.querySelector('.carousel:hover');
+            if (activeCarousel) {
+                const nextBtn = activeCarousel.querySelector('.carousel-control-next');
+                if (nextBtn) nextBtn.click();
+            }
+        }
+    });
 });
